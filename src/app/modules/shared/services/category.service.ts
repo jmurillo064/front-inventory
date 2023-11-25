@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 const base_url = "http://localhost:8084/api/v1";
@@ -16,8 +16,32 @@ export class CategoryService {
    */
 getCategories() {
   const endpoint = `${base_url}/categories`;
-  return this.http.get(endpoint);
+  let httpHeaders= new HttpHeaders();
+  httpHeaders.append('Content-Type', 'application/json');
+  httpHeaders.append("Authorization", "Basic " + btoa("jmurillo:password123"));
 
+  const httpOptions = {
+    headers: httpHeaders
+  };
+  return this.http.get(endpoint, httpOptions);
+
+}
+
+/**
+ * Saved categories
+ */
+
+saveCategorie(body: any) {
+  const endpoint = `${base_url}/categories`;
+  return this.http.post(endpoint, body);
+}
+
+/**
+ * update category
+ */
+updateCategory(body: any, id:any){
+  const endpoint = `${base_url}/categories/${id}`;
+  return this.http.put(endpoint, body);
 }
 
 }
