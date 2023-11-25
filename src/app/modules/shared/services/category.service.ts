@@ -52,4 +52,12 @@ deleteCategory(id:any){
   return this.http.delete(endpoint);
 }
 
+/**
+ * get category
+ */
+getCategoryId(id:any){
+  const endpoint = `${base_url}/categories/${id}`;
+  return this.http.get(endpoint);
+}
+
 }

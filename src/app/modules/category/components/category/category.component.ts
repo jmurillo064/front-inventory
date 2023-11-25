@@ -35,8 +35,9 @@ export class CategoryComponent implements OnInit{
   }
 
   processCategoriesResponse(resp: any) {
+    console.log(resp);
     const dataCategory: CategoryElement[] = [];
-    if(resp.metadata[0].code == "000") {
+    if(resp.metadata[0].code == "00") {
       let listCategory = resp.categoryResponse.category;
       listCategory.forEach((element: CategoryElement) => {
         dataCategory.push(element);
@@ -90,6 +91,21 @@ export class CategoryComponent implements OnInit{
         this.openSnackBar("Se produjo un error al eliminar categoría", "Error");
       }
     });
+  }
+
+  buscar(termino: string){
+    console.log(termino);
+    if(termino.length === 0){
+      return this.getCategories();
+    }
+
+    this.categoryService.getCategoryId(termino)
+    .subscribe((resp: any)=> {
+      this.processCategoriesResponse(resp);
+    }, (error: any) => {
+      this.openSnackBar("Categoría no encontrada", "No exitosa");
+    })
+
   }
 
   openSnackBar(mensaje: string, action: string) : MatSnackBarRef<SimpleSnackBar>{
