@@ -1,10 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { CategoryService } from 'src/app/modules/shared/services/category.service';
 import { NewCategoryComponent } from '../new-category/new-category.component';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 import { ConfirmComponent } from 'src/app/modules/shared/components/confirm/confirm.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-category',
@@ -23,6 +24,9 @@ export class CategoryComponent implements OnInit{
   private categoryService = inject(CategoryService);
   public dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
   getCategories(): void {
     this.categoryService.getCategories()
@@ -43,6 +47,7 @@ export class CategoryComponent implements OnInit{
         dataCategory.push(element);
       });
       this.dataSource = new MatTableDataSource<CategoryElement>(dataCategory);
+      this.dataSource.paginator = this.paginator;
     }
   }
 
