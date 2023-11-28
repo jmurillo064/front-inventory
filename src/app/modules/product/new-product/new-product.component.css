@@ -1,0 +1,23 @@
+.product-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-container > * {
+    width: 100%;
+}
+
+.input-file{
+    display: none;
+}
+
+.subir{
+    padding: 5px 5px;
+    background: #3f51b5;
+    color: #ffffff;
+    border: opx solid #ffffff;
+}
+
+.name-file{
+    padding-left: 5px;
+}
