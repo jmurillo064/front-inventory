@@ -19,9 +19,19 @@ export class ProductService {
     return this.http.get(endpoint);
   }
 
+  /**
+   * 
+   * @param body 
+   * @returns 
+   */
   saveProduct(body: any){
     const endpoint = `${base_url}/products`;
     return this.http.post(endpoint, body);
+  }
+
+  updateProduct(body: any, id: any){
+    const endpoint = `${base_url}/products/${id}`;
+    return this.http.put(endpoint, body);
   }
 
 }
