@@ -1,4 +1,4 @@
-.dashboard-container {
+/*.dashboard-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -49,4 +49,96 @@ div ul {
 
 .icono {
     margin-right: 10px;
+}*/
+
+/* ----------------*/
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .is-mobile .dashboard-toolbar {
+    position: fixed;
+    z-index: 2;
+  }
+  
+  .dashboard-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background: linear-gradient(#141e30, #243b55);
+  }
+  
+  h1.app-name {
+    margin-left: 8px;
+    color: #fff;
+  }
+  
+  .right {
+    margin-left: auto;
+  }
+
+  ul li {
+    list-style: none;
 }
+
+div ul {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+ li:hover {
+    color: #243b55;
+    button {
+        background-color: #fff;
+    }
+}
+  
+  .sidenav-container {
+    flex: 1;
+  }
+  
+  .is-mobile .sidenav-container {
+    flex: 1 0 auto;
+  }
+  
+  mat-nav-list {
+    padding: 16px;
+  }
+  
+  .profile-card {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+  }
+  
+  .header {
+    margin-top: 20px;
+  }
+  
+  .icono {
+    margin-right: 10px;
+    color: #243b55;
+  }
+  
+  .seleccion {
+    background-color: #fff;
+    a {
+        color: #243b55;
+    }
+    mat-icon {
+        color: #243b55;
+    }
+  }
+
+  .seleccion :hover {
+    background-color: #243b55;
+    color: #fff;
+  }
+
+  

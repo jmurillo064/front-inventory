@@ -1,0 +1,13 @@
+{
+    "account": 0,
+    "category": {
+      "id": 0,
+      "name": "Sin datos",
+      "description": "Sin datos"
+    },
+    "id": 0,
+    "name":"Sin datos",
+    "picture": "asset/images/no-data.jpg",
+    "price": 0
+  }
+  

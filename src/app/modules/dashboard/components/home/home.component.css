@@ -1,0 +1,70 @@
+/* productos.component.css */
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .producto {
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .producto img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .contenido {
+    margin-bottom: 0; /* Coloca el contenido al final del contenedor */
+  }
+  
+  .precio {
+    font-weight: bold;
+    color: #009688; /* Puedes ajustar el color según tus preferencias */
+  }
+
+  .panelProduct {
+    margin: 20px;
+    box-shadow: 0 15px 25px #243b55;
+  }
+
+  .rounded-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 0;
+    transition: border-color 0.5s ease;
+  }
+  
+  .rounded-input:focus {
+    border-color: #03e9f4;
+    box-shadow: #03e9f4;
+  }
+
+  .container-div-search {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .div-search {
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  
