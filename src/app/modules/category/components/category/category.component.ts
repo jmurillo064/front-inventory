@@ -24,6 +24,8 @@ export class CategoryComponent implements OnInit{
   private categoryService = inject(CategoryService);
   public dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+  terminoBusqueda: string = '';
+  terminoBusquedaDescripcion: string = '';
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

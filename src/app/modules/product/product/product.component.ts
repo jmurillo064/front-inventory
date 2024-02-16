@@ -15,6 +15,8 @@ import { ConfirmComponent } from '../../shared/components/confirm/confirm.compon
 })
 export class ProductComponent implements OnInit{
 
+  token: string = '';
+
   ngOnInit(): void {
     this.getProducts();
   }

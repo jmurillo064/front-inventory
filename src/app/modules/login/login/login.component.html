@@ -1,0 +1,30 @@
+<body>
+  <div class="login-container">
+    <p-toast></p-toast>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm">
+        <div class="user-box">
+          <input type="text" name="" formControlName="username" required="" />
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="password"
+            name=""
+            formControlName="password"
+            required=""
+          />
+          <label>Password</label>
+        </div>
+        <a href="#" (click)="getLogueo()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+      </form>
+    </div>
+  </div>
+</body>
