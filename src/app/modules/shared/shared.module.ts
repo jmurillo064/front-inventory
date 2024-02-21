@@ -13,13 +13,15 @@ import { JwtInterceptorService } from './services/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 
 import { TooltipModule } from 'primeng/tooltip';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     SidenavComponent,
     ConfirmComponent,
-    LogoutComponent
+    LogoutComponent,
+    FooterComponent
   ],
   exports: [
     SidenavComponent
