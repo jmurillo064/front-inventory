@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Pipe, PipeTransform } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Pipe({
   name: 'filterCategory'
