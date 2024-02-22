@@ -38,12 +38,18 @@ export class LoginComponent {
       this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
       localStorage.setItem('token', data.authResponse.token);
       console.log(data.authResponse.token);
+      this.recargarPagina();
       this.router.navigate(['/dashboard']);
     },(error: any) => {
       console.log(error);
       console.log(error.error.metadata[0].date);
       this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.metadata[0].date });
     })
+  }
+
+
+  recargarPagina(): void {
+    window.location.reload();
   }
 
 }

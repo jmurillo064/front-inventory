@@ -21,38 +21,17 @@ export class JwtInterceptorService implements HttpInterceptor{
       }
       let token = this.loginService.userToken;
       let sendRequest = req;
-    if (token) {
+    /*if (token) {
       const authToken = 'Bearer ' + token;
       const authReq = req.clone({ setHeaders: { Authorization: authToken } });
       sendRequest = authReq;
       return next.handle(sendRequest);
-      /*return next.handle(sendRequest).pipe(
-        catchError((error: HttpErrorResponse) => {
-          return throwError(error);
-        })
-      );*/
     } else {
       localStorage.clear();
       this.router.navigate(['/error/401']);
       return throwError('401 unauthorized');
-    }
+    }*/
+    return next.handle(sendRequest);
     }
 
-  
-
-
-/*
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let token: String = this.loginService.userToken;
-    if(''!=token){
-      req=req.clone({
-        setHeaders:{
-          'Content-Type': 'application/json;charset=utf-8',
-          'Accept': 'application/json',
-          'Authorizacion': `Bearer ${token}`,
-        },
-      })
-    }
-    return next.handle(req);
-  } */
 }
