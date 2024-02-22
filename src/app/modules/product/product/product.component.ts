@@ -27,6 +27,8 @@ export class ProductComponent implements OnInit{
   private productService = inject(ProductService);
   public dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+  terminoBusqueda: string = '';
+  terminoBusquedaDescripcion: string = '';
 
   
 
@@ -54,6 +56,7 @@ export class ProductComponent implements OnInit{
       });
       this.dataSource = new MatTableDataSource<ProductElement>(dateProduct);
       this.dataSource.paginator = this.paginator;
+      console.log(this.dataSource);
     }
   }
 

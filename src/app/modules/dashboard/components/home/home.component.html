@@ -1,45 +1,67 @@
 <div class="panelProduct">
   <p-card>
-    <!--ng-template pTemplate="header">
-      <span class="text-primary font-semibold text-xl"
-        >Productos</span
-      ></ng-template
-    -->
     <div class="container-div-search">
-        <div class="div-search">
-            <input
-      type="text"
-      placeholder="Buscar por nombre"
-      [(ngModel)]="terminoBusqueda"
-      class="rounded-input"
-    />
-        </div>
-        <div class="div-search">
-            <select name="category" id="category" [(ngModel)]="categoriaSeleccionada" class="rounded-input">
-                <option value="">Seleccionar categoría</option>
-                <option *ngFor="let cat of categories" [value]="cat.name">
-                  {{cat.name}}
-                </option>
-              </select>
-        </div>      
-    </div>      
-    
+      <div class="div-search">
+        <input
+          type="text"
+          placeholder="Buscar por nombre"
+          [(ngModel)]="terminoBusqueda"
+          class="rounded-input"
+        />
+      </div>
+      <div class="div-search">
+        <select
+          name="category"
+          id="category"
+          [(ngModel)]="categoriaSeleccionada"
+          class="rounded-input"
+        >
+          <option value="">Seleccionar categoría</option>
+          <option *ngFor="let cat of categories" [value]="cat.name">
+            {{ cat.name }}
+          </option>
+        </select>
+      </div>
+    </div>
 
     <div class="productos-container">
       <div
         class="producto"
         *ngFor="
-          let producto of dataSource.data | filterProductos : terminoBusqueda : categoriaSeleccionada
+          let producto of dataSource.data
+            | filterProductos : terminoBusqueda : categoriaSeleccionada
         "
       >
         <img [src]="producto.picture" alt="{{ producto.name }}" />
         <div class="contenido">
           <h3>{{ producto.name }}</h3>
-          <p>{{ producto.account }}</p>
-          <p class="precio">{{ producto.price | currency }}</p>
+          <hr class="linea" />
+          <p>Cantidad disponible: {{ producto.account }}</p>
+          <p class="precio">Precio: {{ producto.price | currency }}</p>
+          <hr class="linea" />
+          <div
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <span>Solicitar: </span>
+              <button
+                mat-icon-button
+                pTooltip="Solicitar"
+                tooltipPosition="bottom"
+              >
+                <mat-icon>store</mat-icon>
+              </button>
+          </div>
         </div>
       </div>
-      <div *ngIf="(dataSource.data | filterProductos : terminoBusqueda : categoriaSeleccionada).length === 0" class="sin-resultados">
+      <div
+        *ngIf="
+          (
+            dataSource.data
+            | filterProductos : terminoBusqueda : categoriaSeleccionada
+          ).length === 0
+        "
+        class="sin-resultados"
+      >
         No se encontraron resultados.
       </div>
     </div>

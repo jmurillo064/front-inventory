@@ -8,7 +8,7 @@ const routes: Routes = [
     {
         path: 'dashboard', 
         component: DashboardComponent,
-        canActivate: [loguearseGuard],
+        //canActivate: [loguearseGuard],
         loadChildren: () => import('./router-child.module').then(m => m.RouterChildModule)
     },
 ]

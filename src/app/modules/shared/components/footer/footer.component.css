@@ -1,0 +1,26 @@
+.footer {
+  position: static;
+  display: inline-block;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(#04BF45, #038C3E);
+  color: #fff;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.footer h5 {
+  color: #fff;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 10px;
+  }
+}

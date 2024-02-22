@@ -16,6 +16,8 @@ import { CardModule } from 'primeng/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterProductosPipe } from './components/home/filter-productos.pipe';
 import { PanelModule } from 'primeng/panel';
+import { ReportsComponent } from './pages/components/reports/reports.component';
+import { MaterialModule } from '../shared/material.module';
 
 
 
@@ -23,7 +25,8 @@ import { PanelModule } from 'primeng/panel';
   declarations: [
     DashboardComponent,
     HomeComponent,
-    FilterProductosPipe
+    FilterProductosPipe,
+    ReportsComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +43,8 @@ import { PanelModule } from 'primeng/panel';
     CardModule,
     ReactiveFormsModule,
     PanelModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ]
 })
 export class DashboardModule { }

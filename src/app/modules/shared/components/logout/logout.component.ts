@@ -26,8 +26,13 @@ export class LogoutComponent implements OnInit{
     salir(){
       this.messageService.add({ severity: 'success', summary: 'ok', detail: 'Sesión cerrada' });
       localStorage.removeItem('token');
-      this.router.navigate(['/login']);
+      this.recargarPagina();
+      this.router.navigate(['/dashboard']);
       this.dialogRef.close(1);
+    }
+
+    recargarPagina(): void {
+      window.location.reload();
     }
   
 

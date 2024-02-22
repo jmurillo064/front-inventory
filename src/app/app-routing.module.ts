@@ -6,8 +6,8 @@ import { guardGuard } from './modules/guards/guard.guard';
 import { DashboardComponent } from './modules/dashboard/pages/dashboard.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo:'login' },
-  { path: 'login', component: LoginComponent, canActivate: [guardGuard] },
+  { path: '', pathMatch: 'full', redirectTo:'dashboard' },
+  { path: 'login', component: LoginComponent},
   { path: 'dashboard', component: DashboardComponent}
 ];
 

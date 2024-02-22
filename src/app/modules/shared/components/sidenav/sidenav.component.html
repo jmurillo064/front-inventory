@@ -1,12 +1,12 @@
 <div class="dashboard-container" [class.is-mobile]="mobileQuery.matches">
   <p-toast></p-toast>
   <mat-toolbar class="dashboard-toolbar">
-    <h1 class="app-name">SISTEMA DE GESTIÓN DE PRODUCTOS</h1>
+    <h1 class="app-name">ESPAMarket</h1>
     <div class="right">
-      <ul>
+      <ul *ngIf="logueado">
         <li [routerLink]="nav.route" *ngFor="let nav of menuNav">
           <button mat-icon-button pTooltip="{{nav.name}}" tooltipPosition="bottom">
-            <mat-icon >{{ nav.icon }}</mat-icon>
+            <mat-icon>{{ nav.icon }}</mat-icon>
           </button>
         </li>
         <li>
@@ -15,12 +15,26 @@
           </button>
         </li>
         <li>
-          <button mat-button pTooltip="Salir" tooltipPosition="bottom" (click)="openCategoryDialoge()">
-            <mat-icon>cancel</mat-icon>
+          <button mat-icon-button pTooltip="Salir" tooltipPosition="bottom" (click)="openCategoryDialoge()">
+            <mat-icon>logout</mat-icon>
           </button>
         </li>
       </ul>
+      <ul *ngIf="!logueado">
+        <li>
+          <button mat-icon-button pTooltip="Ayuda" tooltipPosition="bottom">
+            <mat-icon>help_outline</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button pTooltip="Login" tooltipPosition="bottom" routerLink="/login">
+            <mat-icon>login</mat-icon>
+          </button>
+        </li>
+      </ul>
+      
     </div>
   </mat-toolbar>
   <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </div>
